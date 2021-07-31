@@ -24,7 +24,7 @@ document.querySelector('#btn').addEventListener('click', getIons)
 		if(isoCrystals.hasOwnProperty(isoLevel) === true && upgradeCrystals.hasOwnProperty(isoLevel) === true){
 			for(let i = isoLevel; i < 6; i++){
 				total = total + (isoCrystals[i] * 5 + upgradeCrystals[i])
-				calcPrint.innerText = "you need " + total.toLocaleString('en') + " ions for level " + i + " iso8 green"
+				calcPrint.innerText = "you need " + total.toLocaleString('en') + " ions for level iso8 green"
 			}			
 		}else{
 			calcPrint.innerText = "Please enter a level under 6"

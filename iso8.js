@@ -14,16 +14,18 @@ const upgradeCrystals = {
 	5:50000,
 }
 
+const isoLevel = document.querySelector('#iso-input').value
+const calcPrint = document.querySelector('#calcResult')
 
 document.querySelector('#btn').addEventListener('click', getIons)
 	function getIons(){
-		let total = '';	
-		const calcPrint = document.querySelector('#calcResult')
-		const isoLevel = parseInt(document.querySelector('#iso-input').value)
-		
+		let total = 0	
+
 		if(isoCrystals.hasOwnProperty(isoLevel) === true && upgradeCrystals.hasOwnProperty(isoLevel) === true){
-			total = (isoCrystals[isoLevel] * 5) + upgradeCrystals[isoLevel]
-			calcPrint.innerText = "You need " + total + " ions"
+			for(let i = isoLevel; i <6; i++){
+				total = total + (isoCrystals[i] * 5 + upgradeCrystals[i])
+				calcPrint.innerText = "you need " + total.toLocaleString('en') + " ions"
+			}			
 		}else{
 			calcPrint.innerText = "Please enter a level under 6"
 		}

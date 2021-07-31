@@ -48,7 +48,7 @@ input{
 h2{
 	margin:10rem;
 }
-@media screen and (min-width:600px){
+@media screen and (max-width:600px){
 	h1{
 		padding:2rem;
 	}

@@ -22,7 +22,7 @@ document.querySelector('#btn').addEventListener('click', getIons)
 		let total = 0	
 
 		if(isoCrystals.hasOwnProperty(isoLevel) === true && upgradeCrystals.hasOwnProperty(isoLevel) === true){
-			for(let i = isoLevel; i <6; i++){
+			for(let i = isoLevel; i < 6; i++){
 				total = total + (isoCrystals[i] * 5 + upgradeCrystals[i])
 				calcPrint.innerText = "you need " + total.toLocaleString('en') + " ions"
 			}			

@@ -20,7 +20,6 @@ const calcPrint = document.querySelector('#calcResult')
 document.querySelector('#btn').addEventListener('click', getIons)
 function getIons() {
 	let total = 0
-
 	if (isoCrystals.hasOwnProperty(isoLevel) === true && upgradeCrystals.hasOwnProperty(isoLevel) === true) {   // loop to add cost of ions per level above entered value up to level 5
 		for (let i = isoLevel; i < 6; i++) {
 			total = total + (isoCrystals[i] * 5 + upgradeCrystals[i])
@@ -31,4 +30,10 @@ function getIons() {
 		calcPrint.innerText = "Please enter a level under 6"
 	}
 
+}
+
+
+document.querySelector('#btn2').addEventListener('click', clear)
+function clear(){
+	location.reload();
 }

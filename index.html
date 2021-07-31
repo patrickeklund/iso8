@@ -9,10 +9,20 @@
 </head>
 <body>
 	<main>
-		<div class="input-container"></div>	
+		<div class="input-container crystal-container">
+			<input type="text" name="" class="hidden" id="health" placeholder="enter health iso8 level">
+			<input type="text" name="" class="hidden" id="armor" placeholder="enter armor iso8 level">
+			<input type="text" name="" class="hidden" id="focus" placeholder="enter focus iso8 level">
+			<input type="text" name="" class="hidden" id="damage" placeholder="enter damage iso8 level">
+			<input type="text" name="" class="hidden" id="resist" placeholder="enter resist iso8 level">
+		</div>
+		<div class="input-container">	
 			<h1>What level iso are you trying to find?</h1>
 			<input type="text" name="" id="iso-input" placeholder="enter iso8 level">
-			<button id="btn" type="button" name="button">Calculate</button>
+			<div class="btn-container">
+				<button class="btn" id="btn2" type="button" name="button">Press first</button>
+				<button class="btn" id="btn" type="button" name="button">Calculate</button>
+			</div>
 		</div>
 		<h2 id="calcResult"></h2>
 	</main>	

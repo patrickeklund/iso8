@@ -13,7 +13,7 @@ main{
 	flex-direction: column;
 }
 h1{
-	padding:10rem;
+	padding:5rem;
 }
 .hidden {
 	display:none;

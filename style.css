@@ -21,7 +21,7 @@ h1{
 .crystal-container{
 	display:none;
 }
-.input-container{
+.input-container, .input-container2{
 	display:flex;
 	justify-content: center;
 	align-items: center;
@@ -37,7 +37,7 @@ input{
 	padding:1rem;
 	height:40px;
 }
-.btn{
+.btn, .btn2{
 	display:flex;
 	justify-content:center;
 	align-items: center;
@@ -50,7 +50,7 @@ input{
 	padding:1rem;
 	margin-top:2rem;
 }
-.btn:hover{
+.btn:hover, .btn2:hover{
 	cursor: pointer;
 }
 h2{

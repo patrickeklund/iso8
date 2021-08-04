@@ -127,10 +127,16 @@ if(resistLevel < 5){
 }else{
 	calcPrintResist.innerText = "Please enter a valid level 1 - 5"
 }
+if(min < 5){
 	for(let i = (min + 1); i < 6; i++) {
 		ionTotal = ionTotal + upgradeCrystals[i]
 	}
 	calcPrintTotal.innerText = resistTotal2 + damageTotal2 + focusTotal2 + armorTotal2 + healthTotal2 + (ionTotal - (parseInt(isoCrystals[min]) + parseInt(upgradeCrystals[min])))  + " total ions needed"
+}else if(min === 5){
+	calcPrintTotal.innerText = "You are already at max level"
+}else{
+	calcPrintTotal.innerText = "Mistakes were made..."
+}
 }
 
 

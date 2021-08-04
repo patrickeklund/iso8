@@ -103,8 +103,11 @@ h2{
 	color:blanchedalmond
 }
 @media screen and (max-width:600px){
+	.img-banner{
+		display:none;
+	}
 	h1{
-		margin-top:5rem;
+		margin-top:1.5rem;
 		padding:2rem;
 	}
 }

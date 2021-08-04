@@ -34,26 +34,26 @@ const calcPrintDamage = document.querySelector('#damageResult')
 const calcPrintResist = document.querySelector('#resistResult')
 const calcPrintTotal = document.querySelector('#totalIons')
 
-document.querySelector('#btn').addEventListener('click', calcTotalIons)
+document.querySelector('#btn').addEventListener('click', calcTotals)
   
-function calcTotalIons() {
+function calcTotals() {
  
   let isoLevels = []
   
-  let healthTotal = 0
-  let healthTotal2 = 0
+  let healthCrystals = 0
+  let healthIons = 0
  
-  let armorTotal = 0
-  let armorTotal2 = 0
+  let armorCrystals = 0
+  let armorIons = 0
  
-  let focusTotal = 0
-  let focusTotal2 = 0
+  let focusCrystals = 0
+  let focusIons = 0
  
-  let damageTotal = 0
-  let damageTotal2 = 0
+  let damageCrystals = 0
+  let damageIons = 0
  
-  let resistTotal = 0
-  let resistTotal2 = 0
+  let resistCrystals = 0
+  let resistIons = 0
  
   let ionTotal = 0
   
@@ -70,13 +70,13 @@ function calcTotalIons() {
   isoLevels.push(resistLevel)
   
   const min = Math.min(...isoLevels)
-  
+  console.log(min)
   
 if(healthLevel < 5){
-  	for(let i = healthLevel; i < 6; i++){
-		healthTotal = healthTotal + crystalCount[i]
-		healthTotal2 = healthTotal2 + (isoCrystals[i])
-		calcPrintHealth.innerText = "You need " + (healthTotal - crystalCount[healthLevel]) + " HEALTH crystals and " + (healthTotal2 - isoCrystals[healthLevel]) + " ions"
+  	for(let i = (healthLevel); i <= 5; i++){
+		healthCrystals = healthCrystals + crystalCount[i]
+		healthIons = healthIons + (isoCrystals[i])
+		calcPrintHealth.innerText = "You need " + (healthCrystals - crystalCount[healthLevel]) + " HEALTH crystals and " + (healthIons - isoCrystals[healthLevel]) + " ions"
 	} 
 }else if(parseInt(healthLevel) === 5){
 		calcPrintHealth.innerText = "Your HEALTH crystal is max level"
@@ -85,10 +85,10 @@ if(healthLevel < 5){
 }
 
 if(armorLevel < 5){
-	for(let i = armorLevel; i < 6; i++){
-		armorTotal = armorTotal + crystalCount[i]
-		armorTotal2 = armorTotal2 + (isoCrystals[i])
-		calcPrintArmor.innerText = "You need " + (armorTotal - crystalCount[armorLevel]) + " ARMOR crystals and " + (armorTotal2 - isoCrystals[armorLevel]) + " ions"
+	for(let i = armorLevel; i <= 5; i++){
+		armorCrystals = armorCrystals + crystalCount[i]
+		armorIons = armorIons + (isoCrystals[i])
+		calcPrintArmor.innerText = "You need " + (armorCrystals - crystalCount[armorLevel]) + " ARMOR crystals and " + (armorIons - isoCrystals[armorLevel]) + " ions"
 	}
 }else if(parseInt(armorLevel) === 5){
 	calcPrintArmor.innerText = "Your ARMOR crystal is max level"
@@ -96,10 +96,10 @@ if(armorLevel < 5){
 	calcPrintArmor.innerText = "Please enter a valid level 1 - 5"
 }
 if(focusLevel < 5){
-	for(let i = focusLevel; i < 6; i++){
-		focusTotal = focusTotal + crystalCount[i]
-		focusTotal2 = focusTotal2 + (isoCrystals[i])
-		calcPrintFocus.innerText = "You need " + (focusTotal - crystalCount[focusLevel]) + " FOCUS crystals and " + (focusTotal2 - isoCrystals[focusLevel]) + " ions"
+	for(let i = focusLevel; i <= 5; i++){
+		focusCrystals = focusCrystals + crystalCount[i]
+		focusIons = focusIons + (isoCrystals[i])
+		calcPrintFocus.innerText = "You need " + (focusCrystals - crystalCount[focusLevel]) + " FOCUS crystals and " + (focusIons - isoCrystals[focusLevel]) + " ions"
 	}
 }else if(parseInt(focusLevel) === 5){
 	calcPrintFocus.innerText = "Your FOCUS crystal is max level"
@@ -107,10 +107,10 @@ if(focusLevel < 5){
 	calcPrintFocus.innerText = "Please enter a valid level 1 - 5"
 }
 if(damageLevel < 5){
-	for(let i = damageLevel; i < 6; i++){
-		damageTotal = damageTotal + crystalCount[i]
-		damageTotal2 = damageTotal2 + (isoCrystals[i])
-		calcPrintDamage.innerText = "You need " + (damageTotal - crystalCount[damageLevel]) + " DAMAGE crystals and " + (damageTotal2 - isoCrystals[damageLevel]) + " ions"
+	for(let i = damageLevel; i <= 5; i++){
+		damageCrystals = damageCrystals + crystalCount[i]
+		damageIons = damageIons + (isoCrystals[i])
+		calcPrintDamage.innerText = "You need " + (damageCrystals - crystalCount[damageLevel]) + " DAMAGE crystals and " + (damageIons - isoCrystals[damageLevel]) + " ions"
 	}
 }else if(parseInt(damageLevel) === 5){
 	calcPrintDamage.innerText = "Your DAMAGE crystal is max level"
@@ -118,10 +118,10 @@ if(damageLevel < 5){
 	calcPrintDamage.innerText = "Please enter a valid level 1 - 5"
 }
 if(resistLevel < 5){
-	for(let i = (resistLevel + 1); i < 6; i++){
-		resistTotal = resistTotal + crystalCount[i]
-		resistTotal2 = resistTotal2 + (isoCrystals[i])
-		calcPrintResist.innerText = "You need " + (resistTotal - crystalCount[resistLevel]) + " RESIST crystals and " + (resistTotal2 - isoCrystals[resistLevel]) + " ions"
+	for(let i = resistLevel; i <= 5; i++){
+		resistCrystals = resistCrystals + crystalCount[i]
+		resistIons = resistIons + (isoCrystals[i])
+		calcPrintResist.innerText = "You need " + (resistCrystals - crystalCount[resistLevel]) + " RESIST crystals and " + (resistIons - isoCrystals[resistLevel]) + " ions"
 	}
 }else if(parseInt(resistLevel) === 5){
 	calcPrintResist.innerText = "Your RESIST crystal is max level"
@@ -129,10 +129,10 @@ if(resistLevel < 5){
 	calcPrintResist.innerText = "Please enter a valid level 1 - 5"
 }
 if(min < 5){
-	for(let i = (min + 1); i < 6; i++) {    // use the lowest input to loop through upgradeCrystals, something is wrong with the logic below 4,4,4,4,4 inputs should equal 300,000
+	for(let i = min; i <= 5; i++) {    // use the lowest input to loop through upgradeCrystals, something is wrong with the logic below 4,4,4,4,4 inputs should equal 300,000
 		ionTotal = ionTotal + upgradeCrystals[i]
 	}
-	calcPrintTotal.innerText = resistTotal2 + damageTotal2 + focusTotal2 + armorTotal2 + healthTotal2 + (ionTotal - (parseInt(isoCrystals[min]) + parseInt(upgradeCrystals[min])))  + " total ions needed"
+	calcPrintTotal.innerText = resistIons + damageIons + focusIons + armorIons + healthIons + (ionTotal - (isoCrystals[min] + upgradeCrystals[min]))  + " total ions needed"
 }else if(min === 5){
 	calcPrintTotal.innerText = "You are already at max level"
 }else{

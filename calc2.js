@@ -35,7 +35,8 @@ const calcPrintResist = document.querySelector('#resistResult')
 const calcPrintTotal = document.querySelector('#totalIons')
 
 document.querySelector('#btn').addEventListener('click', calcTotalIons)
-  function calcTotalIons() {
+  
+function calcTotalIons() {
  
   let isoLevels = []
   
@@ -67,12 +68,12 @@ document.querySelector('#btn').addEventListener('click', calcTotalIons)
   isoLevels.push(focusLevel)
   isoLevels.push(damageLevel)
   isoLevels.push(resistLevel)
-  console.log(isoLevels)
+  
   const min = Math.min(...isoLevels)
-  console.log(min)
+  
   
 if(healthLevel < 5){
-  	for(let i = healthLevel; i <= 5; i++){
+  	for(let i = healthLevel; i < 6; i++){
 		healthTotal = healthTotal + crystalCount[i]
 		healthTotal2 = healthTotal2 + (isoCrystals[i])
 		calcPrintHealth.innerText = "You need " + (healthTotal - crystalCount[healthLevel]) + " HEALTH crystals and " + (healthTotal2 - isoCrystals[healthLevel]) + " ions"
@@ -128,7 +129,7 @@ if(resistLevel < 5){
 	calcPrintResist.innerText = "Please enter a valid level 1 - 5"
 }
 if(min < 5){
-	for(let i = (min + 1); i < 6; i++) {
+	for(let i = (min + 1); i < 6; i++) {    // use the lowest input to loop through upgradeCrystals, something is wrong with the logic below 4,4,4,4,4 inputs should equal 300,000
 		ionTotal = ionTotal + upgradeCrystals[i]
 	}
 	calcPrintTotal.innerText = resistTotal2 + damageTotal2 + focusTotal2 + armorTotal2 + healthTotal2 + (ionTotal - (parseInt(isoCrystals[min]) + parseInt(upgradeCrystals[min])))  + " total ions needed"
@@ -138,6 +139,3 @@ if(min < 5){
 	calcPrintTotal.innerText = "Mistakes were made..."
 }
 }
-
-
- 

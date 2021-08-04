@@ -118,7 +118,7 @@ if(damageLevel < 5){
 	calcPrintDamage.innerText = "Please enter a valid level 1 - 5"
 }
 if(resistLevel < 5){
-	for(let i = resistLevel; i < 6; i++){
+	for(let i = (resistLevel + 1); i < 6; i++){
 		resistTotal = resistTotal + crystalCount[i]
 		resistTotal2 = resistTotal2 + (isoCrystals[i])
 		calcPrintResist.innerText = "You need " + (resistTotal - crystalCount[resistLevel]) + " RESIST crystals and " + (resistTotal2 - isoCrystals[resistLevel]) + " ions"
